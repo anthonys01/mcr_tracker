@@ -217,69 +217,73 @@ class _GamePageState extends State<GamePage> {
           child: Padding(
             padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 8),
             child: SingleChildScrollView(
-              child: DataTable(
-                columnSpacing: 10.0,
-                columns: <DataColumn>[
-                  DataColumn(
-                    label: SizedBox(
-                      width: (width - 70) * 2 / 24,
-                      child: const Text(''),
-                    ),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                      width: (width - 70) * 1 / 24,
-                      child: const Text(''),
-                    ),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                      width: (width - 70) * 3 / 24,
-                      child: Container(
-                          alignment: Alignment.center,
-                          child: Text(player1Wind)
+              scrollDirection: Axis.horizontal,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: DataTable(
+                  columnSpacing: 10.0,
+                  columns: <DataColumn>[
+                    DataColumn(
+                      label: SizedBox(
+                        width: (width - 70) * 2 / 24,
+                        child: const Text(''),
                       ),
                     ),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                      width: (width - 70) * 3 / 24,
-                      child: Container(
-                          alignment: Alignment.center,
-                          child: Text(player2Wind)
+                    DataColumn(
+                      label: SizedBox(
+                        width: (width - 70) * 1 / 24,
+                        child: const Text(''),
                       ),
                     ),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                      width: (width - 70) * 3 / 24,
-                      child: Container(
-                          alignment: Alignment.center,
-                          child: Text(player3Wind)
-                      ),
-                    ),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                      width: (width - 70) * 3 / 24,
-                      child: Container(
-                          alignment: Alignment.center,
-                          child: Text(player4Wind)
-                      ),
-                    ),
-                  ),
-                  if (players.length == 5)
                     DataColumn(
                       label: SizedBox(
                         width: (width - 70) * 3 / 24,
                         child: Container(
                             alignment: Alignment.center,
-                            child: Text(player5Wind)
+                            child: Text(player1Wind)
                         ),
                       ),
                     ),
-                ],
-                rows: rows,
+                    DataColumn(
+                      label: SizedBox(
+                        width: (width - 70) * 3 / 24,
+                        child: Container(
+                            alignment: Alignment.center,
+                            child: Text(player2Wind)
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: SizedBox(
+                        width: (width - 70) * 3 / 24,
+                        child: Container(
+                            alignment: Alignment.center,
+                            child: Text(player3Wind)
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: SizedBox(
+                        width: (width - 70) * 3 / 24,
+                        child: Container(
+                            alignment: Alignment.center,
+                            child: Text(player4Wind)
+                        ),
+                      ),
+                    ),
+                    if (players.length == 5)
+                      DataColumn(
+                        label: SizedBox(
+                          width: (width - 70) * 3 / 24,
+                          child: Container(
+                              alignment: Alignment.center,
+                              child: Text(player5Wind)
+                          ),
+                        ),
+                      ),
+                  ],
+                  rows: rows,
+                )
               ),
             ),
           ),
